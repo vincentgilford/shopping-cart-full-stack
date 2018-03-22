@@ -19,7 +19,7 @@ public class CauldronMvcTest {
 	private MockMvc mvc;
 	
 	@Test
-	public void shouldRetrieveProducts() throws Exception {
+	public void shouldRetrievePotions() throws Exception {
 		mvc.perform(get("/potions")).andExpect(status().isOk());
 	}
 

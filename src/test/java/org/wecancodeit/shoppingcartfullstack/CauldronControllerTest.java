@@ -2,6 +2,7 @@ package org.wecancodeit.shoppingcartfullstack;
 
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.hasSize;
+import static org.junit.Assert.assertThat;
 
 import java.util.Collection;
 
