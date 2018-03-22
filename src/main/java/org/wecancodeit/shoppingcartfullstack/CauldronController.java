@@ -13,7 +13,7 @@ public class CauldronController {
 	@RequestMapping("/potions")
 	public Collection<Potion> getPotions() {
 		
-		return Collections.singleton(new Potion());
+		return Collections.singleton(new Potion("Stuff"));
 	}
 
 }

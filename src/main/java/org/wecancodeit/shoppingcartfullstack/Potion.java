@@ -6,6 +6,17 @@ import javax.persistence.Id;
 @Entity
 public class Potion {
 
+	private String itemName;
 
+	public String getItemName() {
+		return itemName;
+	}
+
+	public Potion(String itemName) {
+		this.itemName = itemName;
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 	
 }
