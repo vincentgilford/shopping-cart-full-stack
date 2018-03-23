@@ -6,6 +6,12 @@ import javax.persistence.Id;
 @Entity
 public class Potion {
 	
+	@Id
+	private long id; 
+
+	public long getId() {
+		return id;
+	}
 
 	private String itemName;
 
