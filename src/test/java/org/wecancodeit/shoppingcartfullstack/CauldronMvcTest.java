@@ -22,5 +22,10 @@ public class CauldronMvcTest {
 	public void shouldRetrievePotions() throws Exception {
 		mvc.perform(get("/potions")).andExpect(status().isOk());
 	}
+	
+	@Test
+	public void shouldRetrieveIndividualPotion() throws Exception {
+		mvc.perform(get("/potions/42")).andExpect(status().isOk());
+	}
 
 }

@@ -5,6 +5,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Potion {
+	
 
 	private String itemName;
 
@@ -17,6 +18,6 @@ public class Potion {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	public Potion() {}  
 	
 }

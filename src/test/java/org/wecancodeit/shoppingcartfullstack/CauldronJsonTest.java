@@ -31,5 +31,17 @@ public class CauldronJsonTest {
 		
 	}
 	
+	@Test
+    public void shouldDeserialize() throws IOException {
+        String jsonContent = "{\"itemName\": \"Health\" }";
+        
+        Potion parsed = potionJson.parseObject(jsonContent);
+        
+        Assertions.assertThat(parsed.getItemName()).isEqualTo("Health");
+    }
+	
+	
+	
+	
 	
 }
