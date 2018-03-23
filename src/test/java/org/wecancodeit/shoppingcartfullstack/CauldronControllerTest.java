@@ -1,15 +1,19 @@
 package org.wecancodeit.shoppingcartfullstack;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 import java.util.Collection;
 
 import org.junit.Test;
+import org.springframework.data.repository.CrudRepository;
 
 public class CauldronControllerTest {
+
 
 	@Test
 	public void shouldRetrivePotions() {
@@ -26,11 +30,11 @@ public class CauldronControllerTest {
 		CauldronController underTest = new CauldronController();
 		
 		
-		Potion potion = underTest.getPotion(42L);
 		
-		Potion expected = new Potion("Potion");
+		Potion savedPotion = underTest.getPotion(42L);
 		
-		assertThat(potion, is(underTest.getPotion(42L)));
+		
+		assertThat(savedPotion, is(not(nullValue())));
 		
 		
 	}

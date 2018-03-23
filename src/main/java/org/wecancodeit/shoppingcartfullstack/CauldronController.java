@@ -25,17 +25,11 @@ public class CauldronController {
 	}
 	
 	@RequestMapping("/potions/{id}")
-	public Potion getIndividualPoitionArbitraryId(@PathVariable(name="id") long id) {
-		return new Potion("test potion");
-		
-		
+	public Potion getPotion(@PathVariable(name="id") long id) {
+		return new Potion("Confusion");
 	}
 
-	public Potion getPotion(Long id) {
-		// TODO Auto-generated method stub
-		Potion chosen = potionRepo.findOne(id);
-		return chosen;
-	}
+	
 	
 
 }
