@@ -18,6 +18,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.data.repository.CrudRepository;
+import org.wecancodeit.shoppingcartfullstack.CauldronController.PotionNotFoundException;
 
 public class CauldronControllerTest {
 
@@ -39,7 +40,7 @@ public class CauldronControllerTest {
 	public void shouldRetrivePotions() {
 		when(potionRepo.findAll()).thenReturn(Collections.singleton(potion));
 
-		Iterable<Potion> result = underTest.getPotions();
+		Iterable<Potion> result = underTest.findPotions();
 
 		assertThat(result, contains(any(Potion.class)));
 
@@ -47,12 +48,19 @@ public class CauldronControllerTest {
 
 	@Test
 	public void shouldRetrieveSinglePotion() {
-		CauldronController underTest = new CauldronController();
+		long id = 42L;
+		when(potionRepo.findOne(id)).thenReturn(potion);
 
-		Potion savedPotion = underTest.getPotion(42L);
+		Potion savedPotion = underTest.findPotion(id);
 
-		assertThat(savedPotion, is(not(nullValue())));
+		assertThat(savedPotion, is(potion));
 
+	}
+
+	@Test(expected = PotionNotFoundException.class)
+	public void shouldReturnIfRequestForPotionIsBad() {
+		long invalidPotionId = 42L;
+		underTest.findPotion(invalidPotionId);
 	}
 
 }

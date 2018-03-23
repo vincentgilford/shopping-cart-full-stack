@@ -17,14 +17,18 @@ public class CauldronController {
 	private CrudRepository<Potion, Long> potionRepo;
 
 	@RequestMapping("/potions")
-	public Iterable<Potion> getPotions() {
+	public Iterable<Potion> findPotions() {
 
 		return potionRepo.findAll();
 	}
 
 	@RequestMapping("/potions/{id}")
-	public Potion getPotion(@PathVariable(name = "id") long id) {
-		return new Potion("Confusion");
+	public Potion findPotion(@PathVariable(name = "id") long id) {
+		return potionRepo.findOne(id);
 	}
 
+	public class PotionNotFoundException extends RuntimeException {
+		
+	}
+	
 }
