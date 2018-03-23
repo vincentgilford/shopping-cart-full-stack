@@ -13,10 +13,8 @@ public class MaintenanceController {
 	CrudRepository<Potion, Long> potionRepo; 
 	
 	
-
+	@RequestMapping("/potions")
 	public Potion createPotion(Potion incoming) {
- 
-	
 		return 	potionRepo.save(incoming);
 	}
 
