@@ -1,5 +1,6 @@
 package org.wecancodeit.shoppingcartfullstack;
 
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -25,11 +26,18 @@ public class CauldronMvcTest {
 
 	@Test
 	public void shouldRetrievePotions() throws Exception {
+
 		mvc.perform(get("/potions")).andExpect(status().isOk());
 	}
 
 	@Test
 	public void shouldRetrieveIndividualPotion() throws Exception {
+		when(potionRepo.findOne(42L)).thenReturn(new Potion("Strength"));
 		mvc.perform(get("/potions/42")).andExpect(status().isOk());
+	}
+
+	@Test
+	public void shouldNotFindPotionId() throws Exception {
+		mvc.perform(get("/products/42")).andExpect(status().isNotFound());
 	}
 }
