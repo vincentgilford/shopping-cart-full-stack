@@ -50,7 +50,7 @@ public class MaintenanceMvcTest {
 		String potionJson = jsonMapper.writeValueAsString(potion); 
 		
 		MockHttpServletRequestBuilder request = post("/potions").content(potionJson);
-		mvc.perform(request).andExpect(jsonPath("@.name", is("Lycanthropy")));
+		mvc.perform(request).andExpect(jsonPath("@.itemName", is("Lycanthropy")));
 
 	}
 	
