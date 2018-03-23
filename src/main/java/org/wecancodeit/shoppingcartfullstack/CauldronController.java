@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CauldronController {
 	
+	@Resource
+	private CrudRepository<Potion, Long> potionRepo; 
+	
 	
 	
 	@RequestMapping("/potions")
@@ -26,6 +29,12 @@ public class CauldronController {
 		return new Potion("test potion");
 		
 		
+	}
+
+	public Potion getPotion(Long id) {
+		// TODO Auto-generated method stub
+		Potion chosen = potionRepo.findOne(id);
+		return chosen;
 	}
 	
 

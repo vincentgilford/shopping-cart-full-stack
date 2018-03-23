@@ -9,11 +9,12 @@ public class Potion {
 	@Id
 	private long id; 
 
+	private String itemName;
+
 	public long getId() {
 		return id;
 	}
 
-	private String itemName;
 
 	public String getItemName() {
 		return itemName;
@@ -24,6 +25,7 @@ public class Potion {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Potion() {}  
+	
+	protected Potion() {}  
 	
 }
