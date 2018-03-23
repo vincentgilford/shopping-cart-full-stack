@@ -11,9 +11,9 @@ public class Potion {
 
 	private String itemName;
 
-//	public long getId() {
-//		return id;
-//	}
+	public long getId() {
+		return id;
+	}
 
 
 	public String getItemName() {

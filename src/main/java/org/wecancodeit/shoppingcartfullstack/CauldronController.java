@@ -19,9 +19,9 @@ public class CauldronController {
 	
 	
 	@RequestMapping("/potions")
-	public Collection<Potion> getPotions() {
+	public Iterable<Potion> getPotions() {
 		
-		return Collections.singleton(new Potion("Stuff"));
+		return potionRepo.findAll();
 	}
 	
 	@RequestMapping("/potions/{id}")
@@ -29,7 +29,5 @@ public class CauldronController {
 		return new Potion("Confusion");
 	}
 
-	
-	
 
 }
