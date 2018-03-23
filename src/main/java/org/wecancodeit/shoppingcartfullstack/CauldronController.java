@@ -12,22 +12,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CauldronController {
-	
+
 	@Resource
-	private CrudRepository<Potion, Long> potionRepo; 
-	
-	
-	
+	private CrudRepository<Potion, Long> potionRepo;
+
 	@RequestMapping("/potions")
 	public Iterable<Potion> getPotions() {
-		
+
 		return potionRepo.findAll();
 	}
-	
+
 	@RequestMapping("/potions/{id}")
-	public Potion getPotion(@PathVariable(name="id") long id) {
+	public Potion getPotion(@PathVariable(name = "id") long id) {
 		return new Potion("Confusion");
 	}
-
 
 }
