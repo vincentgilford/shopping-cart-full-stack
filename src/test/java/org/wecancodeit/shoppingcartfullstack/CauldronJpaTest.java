@@ -131,6 +131,23 @@ public class CauldronJpaTest {
 		
 	}
 	
+	@Test
+	public void shouldFindByPotionPriceSpecficItems() {
+		Potion red = new Potion("Red","health","2", 3.00); 
+		potionRepo.save(red);
+		Potion blue = new Potion("Super Red","health","1", 6.00);
+		potionRepo.save(blue);
+		Potion green = new Potion("Blue","mana","1",3.00);
+		potionRepo.save(green);
+
+		testEntity.flush();
+		testEntity.clear();		
+		
+		Collection<Potion> testPotions = potionRepo.findByPotionPrice(3.00);
+		
+		assertThat(testPotions, containsInAnyOrder(red,green));
+	}
+	
 	
 	
 	
