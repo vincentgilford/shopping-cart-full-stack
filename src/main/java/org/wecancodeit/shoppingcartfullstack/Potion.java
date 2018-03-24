@@ -10,6 +10,13 @@ public class Potion {
 	private long id; 
 
 	private String itemName;
+	private String classification; 
+	
+	
+	public String getClassification() {
+		return classification;
+	}
+
 
 	public long getId() {
 		return id;
@@ -26,6 +33,11 @@ public class Potion {
 	}
 	
 	
-	protected Potion() {}  
+	protected Potion(String itemName, String classification) {
+		this.itemName = itemName;
+		this.classification = classification;
+		
+		
+	}  
 	
 }

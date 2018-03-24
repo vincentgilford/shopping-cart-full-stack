@@ -38,12 +38,22 @@ public class CauldronJpaTest {
 	
 	@Test
 	public void shouldFindByClassificationForPotion() {
-		Potion red = new Potion("Red"); 
+		Potion red = new Potion("Red","health"); 
 		potionRepo.save(red); 
 		Potion testFind = potionRepo.findByClassification("health"); 
 		
 		
 		assertThat(testFind, is(red));
+	}
+	
+	@Test
+	public void shouldFindByLevelForPotion() {
+		Potion red = new Potion("Red","health",1); 
+		potionRepo.save(red); 
+		Potion testFind = potionRepo.findByClassification(1);
+		
+		assertThat(testFind, is(red));
+		
 	}
 	
 	
