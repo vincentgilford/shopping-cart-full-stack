@@ -36,6 +36,16 @@ public class CauldronJpaTest {
 		
 	}
 	
+	@Test
+	public void shouldFindByClassificationForPotion() {
+		Potion red = new Potion("Red"); 
+		potionRepo.save(red); 
+		Potion testFind = potionRepo.findByClassification("health"); 
+		
+		
+		assertThat(testFind, is(red));
+	}
+	
 	
 	
 	}
