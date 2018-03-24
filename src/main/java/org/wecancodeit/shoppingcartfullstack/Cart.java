@@ -17,12 +17,13 @@ public class Cart {
 	private long id;
 	
 	
-	
 	@OneToMany(mappedBy = "cart")
 	private List<Potion> potions;
+
+	private int quantity;
 	
 
-	public Collection<Potion> getPotions() {
+	public List<Potion> getPotions() {
 		return potions;
 	}
 
@@ -31,9 +32,10 @@ public class Cart {
 		return id;
 	}
 
-	public Collection<Potion> placePotions(Potion...salves) {
+	public List<Potion> placePotions(Potion...salves) {
 		for(Potion salve : salves) {
 			potions.add(salve);
+			
 		}
 		return potions;
 	}
@@ -48,8 +50,8 @@ public class Cart {
 
 
 	public int getQuantity() {
-		// TODO Auto-generated method stub
-		return 0;
+		quantity = potions.size();	
+		return quantity;
 	}
 	
 	

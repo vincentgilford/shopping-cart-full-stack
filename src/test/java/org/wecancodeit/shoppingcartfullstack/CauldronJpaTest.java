@@ -148,6 +148,28 @@ public class CauldronJpaTest {
 		assertThat(testPotions, containsInAnyOrder(red,green));
 	}
 	
+	@Test 
+	public void shouldGetQuantityFromPotionCollectionFromCart() {
+		Potion red = new Potion("Red","health","2"); 
+		potionRepo.save(red);
+		Potion blue = new Potion("Super Red","health","1");
+		potionRepo.save(blue);
+		Potion green = new Potion("Blue","mana","1");
+		potionRepo.save(green);
+		
+		Cart cart = new Cart();
+		
+		cartRepo.save(cart);
+		
+		
+		testEntity.flush();
+		testEntity.clear();
+		
+		
+		int testQuantity;
+		assertThat(cart.getQuantity(), is(3));
+		
+	}
 	
 	
 	
