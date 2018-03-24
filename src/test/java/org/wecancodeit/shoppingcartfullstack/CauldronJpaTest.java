@@ -64,15 +64,20 @@ public class CauldronJpaTest {
 	
 	
 	
-//	@Test
-//	public void shouldFindByLevelForPotion() {
-//		Potion red = new Potion("Red","health",1); 
-//		potionRepo.save(red); 
-//		Collection<Potion> testFind = potionRepo.findByClassification(1);
-//		
-//		assertThat(testFind, contains(red));
-//		
-//	}
+	@Test
+	public void shouldFindByLevelForPotion() {
+		Potion red = new Potion("Red","health",2); 
+		potionRepo.save(red);
+		Potion blue = new Potion("Super Red","health",1);
+		potionRepo.save(blue);
+		Potion green = new Potion("Red","mana",1);
+		potionRepo.save(green);
+		Collection<Potion> testFind = potionRepo.findbyLevel(1);
+		
+		
+		assertThat(testFind, containsInAnyOrder(red,green));
+		
+	}
 	
 	
 	
