@@ -2,6 +2,7 @@ package org.wecancodeit.shoppingcartfullstack;
 
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -100,6 +101,8 @@ public class CauldronJpaTest {
 		Cart cart = new Cart();
 		
 		cartRepo.save(cart);
+		
+		
 		testEntity.flush();
 		testEntity.clear();
 		
@@ -110,6 +113,23 @@ public class CauldronJpaTest {
 		assertThat(testPotions, containsInAnyOrder(red,blue,green));
 	}
 	
+	@Test
+	public void shouldFindByPotionPrice() {
+		Potion red = new Potion("Red","health","2", 3.00); 
+		potionRepo.save(red);
+		Potion blue = new Potion("Super Red","health","1", 6.00);
+		potionRepo.save(blue);
+		Potion green = new Potion("Blue","mana","1",3.00);
+		potionRepo.save(green);
+
+		testEntity.flush();
+		testEntity.clear();
+		
+		Collection<Potion> testPotions = potionRepo.findByPotionPrice(3.00); 
+		
+		assertThat(testPotions.size(), is(2));
+		
+	}
 	
 	
 	

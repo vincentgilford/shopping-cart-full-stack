@@ -18,12 +18,16 @@ public class Potion {
 	private String level; 
 	private double potionPrice; 
 	
-	
 	@ManyToOne
 	private Cart cart;
+	
+	public double getPotionPrice() {
+		return potionPrice;
+	}
 
-	private double price; 
-
+	public Cart getCart() {
+		return cart;
+	}
 
 	public long getId() {
 		return id;
@@ -31,6 +35,10 @@ public class Potion {
 
 	public String getClassification() {
 		return classification;
+	}
+
+	public String getLevel() {
+		return level;
 	}
 
 	public String getItemName() {
@@ -41,26 +49,23 @@ public class Potion {
 		this.itemName = itemName;
 	}
 	
-	
+
 	public Potion(String itemName, String classification, String level) {
 		this.itemName = itemName;
 		this.classification = classification;
 		this.level = level;	
 	}
 	
-	public Potion(String itemName, String classification, String level, double price) {
+	public Potion(String itemName, String classification, String level, double potionPrice) {
 		this.itemName = itemName;
 		this.classification = classification;
 		this.level = level;
-		this.price = price;	
+		this.potionPrice = potionPrice;	
 	}
 
 	protected Potion() {}; 
 	
 	
-	public String getLevel() {
-		return level;
-	}
 
 
 	@Override
