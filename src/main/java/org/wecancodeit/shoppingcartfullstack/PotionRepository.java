@@ -11,5 +11,5 @@ import org.springframework.data.repository.CrudRepository;
  */
 
 public interface PotionRepository extends CrudRepository<Potion, Long> {
-
+	Potion findByItemName(String itemName);
 }

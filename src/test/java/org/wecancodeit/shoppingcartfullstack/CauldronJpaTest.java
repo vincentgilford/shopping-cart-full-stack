@@ -1,7 +1,11 @@
 package org.wecancodeit.shoppingcartfullstack;
 
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+
 import javax.annotation.Resource;
 
+import org.aspectj.lang.annotation.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -13,14 +17,25 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class CauldronJpaTest {
 	
 	@Resource
-	private CrudRepository<Potion, Long> potionRepo; 
+	private PotionRepository potionRepo; 
+	
 	
 	
 	@Test
-	public void shouldInitializePotionRepository() {
-		
+	public void shouldInitializePotionRepository() {	
 		
 	}
+	
+	@Test
+	public void shouldFindByNameForPotion() {
+		Potion red = new Potion("Red"); 
+		potionRepo.save(red); 
+		Potion testFind = potionRepo.findByItemName("Red"); 
+		
+		assertThat(testFind, is(red));
+		
+	}
+	
 	
 	
 	}
