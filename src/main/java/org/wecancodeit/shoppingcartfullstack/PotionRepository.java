@@ -3,6 +3,8 @@
  */
 package org.wecancodeit.shoppingcartfullstack;
 
+import java.util.Collection;
+
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -13,5 +15,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface PotionRepository extends CrudRepository<Potion, Long> {
 	Potion findByItemName(String itemName);
 
-	Potion findByClassification(String classification);
+	Collection<Potion> findByClassification(String classification);
+	
+	
 }
