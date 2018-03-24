@@ -21,5 +21,4 @@ public interface PotionRepository extends CrudRepository<Potion, Long> {
 
 	Collection<Potion> findByPotionPrice(double potionPrice);
 	
-	
 }
