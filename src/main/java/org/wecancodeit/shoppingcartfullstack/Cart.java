@@ -16,6 +16,8 @@ public class Cart {
 	@GeneratedValue
 	private long id;
 	
+	
+	
 	@OneToMany(mappedBy = "cart")
 	private List<Potion> potions;
 	
@@ -26,7 +28,6 @@ public class Cart {
 
 
 	public long getId() {
-		// TODO Auto-generated method stub
 		return id;
 	}
 
@@ -40,7 +41,7 @@ public class Cart {
 	
 	public Cart(Potion...potion) {
 		this.potions = Arrays.asList(potion);
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	protected Cart() {}

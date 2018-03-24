@@ -16,9 +16,13 @@ public class Potion {
 	private String itemName;
 	private String classification;
 	private String level; 
+	private double potionPrice; 
+	
 	
 	@ManyToOne
-	private Cart cart; 
+	private Cart cart;
+
+	private double price; 
 
 
 	public long getId() {
@@ -35,19 +39,25 @@ public class Potion {
 
 	public Potion(String itemName) {
 		this.itemName = itemName;
-		// TODO Auto-generated constructor stub
 	}
 	
 	
-	protected Potion(String itemName, String classification, String level) {
+	public Potion(String itemName, String classification, String level) {
+		this.itemName = itemName;
+		this.classification = classification;
+		this.level = level;	
+	}
+	
+	public Potion(String itemName, String classification, String level, double price) {
 		this.itemName = itemName;
 		this.classification = classification;
 		this.level = level;
-		
-		
+		this.price = price;	
 	}
 
-
+	protected Potion() {}; 
+	
+	
 	public String getLevel() {
 		return level;
 	}

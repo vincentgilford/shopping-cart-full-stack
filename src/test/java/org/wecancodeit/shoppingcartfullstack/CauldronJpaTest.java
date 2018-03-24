@@ -108,9 +108,10 @@ public class CauldronJpaTest {
 		cart.placePotions(red,blue,green);
 		Collection<Potion> testPotions = cart.getPotions();
 		assertThat(testPotions, containsInAnyOrder(red,blue,green));
-		
-
 	}
+	
+	
+	
 	
 	
 	}
