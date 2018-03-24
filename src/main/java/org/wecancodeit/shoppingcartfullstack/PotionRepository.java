@@ -17,7 +17,7 @@ public interface PotionRepository extends CrudRepository<Potion, Long> {
 
 	Collection<Potion> findByClassification(String classification);
 
-	Collection<Potion> findbyLevel(int level);
+	Collection<Potion> findByLevel(String level);
 	
 	
 }

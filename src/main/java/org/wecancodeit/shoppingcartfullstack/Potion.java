@@ -3,6 +3,8 @@ package org.wecancodeit.shoppingcartfullstack;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Potion {
@@ -13,19 +15,19 @@ public class Potion {
 
 	private String itemName;
 	private String classification;
-
-	private int level; 
+	private String level; 
 	
-	
-	public String getClassification() {
-		return classification;
-	}
+	@ManyToOne
+	private Cart cart; 
 
 
 	public long getId() {
 		return id;
 	}
 
+	public String getClassification() {
+		return classification;
+	}
 
 	public String getItemName() {
 		return itemName;
@@ -37,7 +39,7 @@ public class Potion {
 	}
 	
 	
-	protected Potion(String itemName, String classification, int level) {
+	protected Potion(String itemName, String classification, String level) {
 		this.itemName = itemName;
 		this.classification = classification;
 		this.level = level;
@@ -46,7 +48,7 @@ public class Potion {
 	}
 
 
-	public int getLevel() {
+	public String getLevel() {
 		return level;
 	}
 
