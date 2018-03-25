@@ -165,9 +165,12 @@ public class CauldronJpaTest {
 		testEntity.flush();
 		testEntity.clear();
 		
+		long cartId = cart.getId();
+		cart = cartRepo.findOne(cartId);
+		cart.placePotions(red,blue,green);
+		int testQuantity = cart.getQuantity();
 		
-		int testQuantity;
-		assertThat(cart.getQuantity(), is(3));
+		assertThat(testQuantity, is(3));
 		
 	}
 	
