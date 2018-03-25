@@ -3,6 +3,7 @@ package org.wecancodeit.shoppingcartfullstack;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Potion {
@@ -13,19 +14,33 @@ public class Potion {
 
 	private String itemName;
 	private String classification;
+	private String level; 
+	private double potionPrice; 
+	
+	@ManyToOne
+	private Cart cart;
 
-	private int level; 
+	private String imageUrl;
 	
-	
-	public String getClassification() {
-		return classification;
+	public double getPotionPrice() {
+		return potionPrice;
 	}
 
+	public Cart getCart() {
+		return cart;
+	}
 
 	public long getId() {
 		return id;
 	}
 
+	public String getClassification() {
+		return classification;
+	}
+
+	public String getLevel() {
+		return level;
+	}
 
 	public String getItemName() {
 		return itemName;
@@ -33,22 +48,37 @@ public class Potion {
 
 	public Potion(String itemName) {
 		this.itemName = itemName;
-		// TODO Auto-generated constructor stub
 	}
 	
+
+	public Potion(String itemName, String classification, String level) {
+		this.itemName = itemName;
+		this.classification = classification;
+		this.level = level;	
+	}
 	
-	protected Potion(String itemName, String classification, int level) {
+	public Potion(String itemName, String classification, String level, double potionPrice) {
 		this.itemName = itemName;
 		this.classification = classification;
 		this.level = level;
-		
-		
+		this.potionPrice = potionPrice;	
+	}
+	
+	public Potion(String itemName, String classification, String level, String imageUrl, double potionPrice) {
+		this.itemName = itemName;
+		this.classification = classification;
+		this.level = level;
+		this.imageUrl = imageUrl;
+		this.potionPrice = potionPrice;	
 	}
 
-
-	public int getLevel() {
-		return level;
+	public String getImageUrl() {
+		return imageUrl;
 	}
+
+	protected Potion() {}; 
+	
+	
 
 
 	@Override

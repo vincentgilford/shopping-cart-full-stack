@@ -1,0 +1,48 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+    list-style-type: none;
+    text-decoration: none;
+
+
+}
+
+.frame__setup{
+    height:100%;
+    width:100%;
+    border: none;
+}
+
+.head{
+    background: linear-gradient(-90deg, rgb(0, 200, 223), white);
+
+    z-index: 1;
+}
+
+.left__menu{
+    background-color: #C6F9FF;
+}
+
+.items__list{
+    background-color: rgb(224, 224, 224);
+
+}
+
+.footer{
+    background-color: gray;
+}
+
+.logo{
+    z-index: 1;
+}
+
+.active {
+    background-color:rgb(226, 248, 250);
+  }
+
+nav button{
+    margin: 5px;
+}

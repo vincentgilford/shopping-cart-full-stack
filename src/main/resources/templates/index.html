@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link rel="stylesheet" href="../static/css/layout.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+
+	<title>The Cauldron</title>
+</head>
+<body>
+    <div class="container">
+        <header class="head">
+            <img class="main__logo" src="../static/images/cauldron.png" />
+            <h1>The Cauldron</h1>
+        </header>
+        <nav class="left__menu">
+            <button class="if__button"><h2>Home</h2></button>
+            
+            <button class="if__button"><a href="./health.html" target="test__frame">Health</a></button>
+
+            <button class="if__button"><a href="./mana.html" target="test__frame" >Mana</a></button>
+               
+
+            <button class="if__button">Weapons</button>
+                
+
+            <button class="if__button">Buffs</button>
+                
+
+            <button class="dropdown-btn">Wearables</button>
+                <span class="dropdown-container">
+                    <a href="https://www.etsy.com/search?q=potion+belt" target="_blank">Belts </a>
+                    <a href="https://www.ebags.com/department/backpacks" target="_blank">Bags</a>
+                    <a href="https://www.homedepot.com/b/Hardware-Chain-Rope-Rope/N-5yc1vZc2gr" target="_blank">Rope</a>
+                </span>
+        </nav>
+
+        <section class="cart">
+            
+            <button class="cart__button"><img class="cart__logo" src="../static/images/cart.png" />[# of items]</button>
+            
+        </section>
+
+        <main class="items__list">
+            <iframe id="for__anchor" name="test__frame" class="frame__setup" src="./all-potions.html"></iframe>
+        </main>
+
+        <footer class="footer">
+            Copyright © 2018, Cauldron Brews. Ecommerce Software by&nbsp;<a href="https://github.com/JDSalisbury" target="_blank">Jeff Salisbury</a>&nbsp;and&nbsp;<a href="https://github.com/vincentgilford" target="_blank">Gilford Vincent</a>.
+        </footer>
+    </div>
+</body>
+<script src="../static/js/drop-down.js"></script>
+
+</html>

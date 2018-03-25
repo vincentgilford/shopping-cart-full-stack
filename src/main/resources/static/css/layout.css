@@ -1,0 +1,90 @@
+
+.container{
+    display: grid;
+    grid-template-rows: 75px 1fr 1fr 1fr 1fr 100px;
+    grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 100vh;
+    grid-gap: 1rem;
+    padding: 1rem;
+    
+}
+
+
+
+.head{
+    padding: 1rem;
+    grid-column: 1/4;
+    display: flex;
+}
+
+.main__logo{
+        height: 250%;  
+        position: relative;  
+        top: -40px;
+        right: 10px;
+}
+
+
+
+.footer{
+    padding: 1rem;
+    grid-row: 6;
+    grid-column: 1/-1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left__menu{
+    padding: 1rem;
+    grid-row: 2/6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.items__list{
+    padding: 1rem;
+    grid-column: 2/-1;
+    grid-row: 2/6;
+}
+
+.cart{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1rem;
+    grid-column: -1/-2;
+}
+
+.cart__logo{
+    width: 25%;
+}
+
+.cart__button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100px;
+}
+
+
+.dropdown-container {
+    display: none;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+.dropdown-btn, .if__button{
+    background: none;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+
+}
